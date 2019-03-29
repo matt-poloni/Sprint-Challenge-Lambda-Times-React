@@ -28,23 +28,36 @@ Look through the application code. If you have the old Lambda Times (Applied Jav
 
 ## Self-Study/Essay Questions
 
-- [ ] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
-- [ ] Describe a life-cycle event in React?
-- [ ] Explain the details of a Higher Order Component?
-- [ ] What are three different ways to style components in React? Explain some of the benefits of each.
+- [x] What are PropTypes used for? Please describe why it's important to type check our data in JavaScript.
+
+* PropTypes help ensure that the data you're recieving matches the type that your app expects and actually use. If you don't use PropTypes, then it is possible to pass in the wrong type of data at some point, not recieve any warning, and have it ruin the functionality of your app. Because there wouldn't be a warning, you might even not notice a problem in testing and have a user accidentally break it upon their own fringe use case.
+
+- [x] Describe a life-cycle event in React?
+
+* The `constructor` method is the first event in a React component's lifecycle, setting up the state data for a class component and (if you're not using arrow functions for your methods) binding the `this` keyword to methods before continuing through the render phase of the component's original mounting. After running once, it won't run again unless the component has been unmounted and is in the process of being re-mounted. Other lifecycle events include 
+
+- [x] Explain the details of a Higher Order Component?
+
+* HOCs are components that take in at least one other component and returns exactly one component that is captured as a variable so that *it* can be rendered. You can then use the HOC to share logic between child components or to conditionally render one or another component. Because they should never be directly rendered in JSX, you should use the `withWhatever` naming convention in which you keep the first letter lowercase (as opposed to the usual uppercase naming of components) and usually prepend 'with' before some name that identifies the HOC's use case.
+
+- [x] What are three different ways to style components in React? Explain some of the benefits of each.
+
+1. **Import from a CSS (or preprocessed) file.** It allows you to work in the way that developers have for a very long time and is probably easier to follow for anyone that is as yet unfamiliar with React.
+2. **Pre-styled component libraries.** Libraries such as Reactstrap or Semantic UI React have already set up react components that look professional without the need to set up your own styles. All you need to do is add the dependency and import whatever components you need.
+3. **Styled Components.** It allows you to customize your CSS for a component in the same file that defines that component, maintaining the same full customizability as regular CSS (w/ some benefits from preprocessors, such as nesting) plus the ability to add custom styling props to components, all without having to import from (or even look at) another file.
 
 ## Project Setup
 
 Follow these steps to set up your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your project manager as collaborator on Github.
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
-- [ ] From within the `lambdatimes` folder run `yarn` and then `yarn start`. This will open your locally hosted application in your browser. Once you are ready move onto the next steps.
-- [ ] Inside the `Content` folder you will find all 5 components that make up the content of the application. The flow goes like this: `Content > Tabs > Tab` and `Content > Cards > Card`. Follow the directions in the `Content` component to get your data ready.
+- [x] Create a forked copy of this project.
+- [x] Add your project manager as collaborator on Github.
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!).
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
+- [x] From within the `lambdatimes` folder run `yarn` and then `yarn start`. This will open your locally hosted application in your browser. Once you are ready move onto the next steps.
+- [x] Inside the `Content` folder you will find all 5 components that make up the content of the application. The flow goes like this: `Content > Tabs > Tab` and `Content > Cards > Card`. Follow the directions in the `Content` component to get your data ready.
 
 Follow these steps for completing your project.
 
