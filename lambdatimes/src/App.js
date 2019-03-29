@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import TopBar from './components/TopBar';
 import Header from './components/Header';
+import withAuth from './components/auth/withAuth';
 import Content from './components/Content/Content';
+import Login from './components/Login';
 import styled, { createGlobalStyle } from 'styled-components';
+
+const CompFromWithAuth = withAuth(Content)(Login);
 
 const GlobalStyles = createGlobalStyle`
   .width-100 {
@@ -69,7 +73,7 @@ const App = () => {
       <WrapApp>
         <TopBar />
         <Header />
-        <Content />
+        <CompFromWithAuth />
       </WrapApp>
     </React.Fragment>
   );
