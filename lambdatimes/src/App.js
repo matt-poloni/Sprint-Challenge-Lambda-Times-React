@@ -73,7 +73,8 @@ const App = () => {
       <WrapApp>
         <TopBar />
         <Header />
-        <CompFromWithAuth />
+        <Content />
+        {/* <CompFromWithAuth /> */}
       </WrapApp>
     </React.Fragment>
   );
