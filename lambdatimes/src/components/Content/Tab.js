@@ -1,5 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const WrapTab = styled.div`
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  flex-direction: row;
+  color: #fff;
+  background-color: #333;
+  margin: 0 5px;
+  padding: 2px 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {text-decoration: underline}
+  &.active-tab {
+    background-color: #fff;
+    color: #333;
+    border: 2px solid #333;
+  }
+`
 
 const Tab = props => {
   /* Using your props, determine if the `tab` prop matches the `selectedTab` prop, 
@@ -10,7 +33,7 @@ const Tab = props => {
     : ''
 
   return (
-    <div
+    <WrapTab
       className={`tab${active}`}
       onClick={() => {
         props.selectTabHandler(props.tab)
@@ -19,7 +42,7 @@ const Tab = props => {
       }}
     >
       {props.tab.toUpperCase()}
-    </div>
+    </WrapTab>
   );
 };
 
