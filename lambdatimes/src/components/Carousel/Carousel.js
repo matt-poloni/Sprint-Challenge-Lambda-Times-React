@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { carouselData } from '../../data';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const WrapCarousel = styled.div`
   width: 100%;
@@ -56,29 +56,35 @@ export default class Carousel extends Component {
   constructor(props){
     super(props);
     this.state = {
-
+      images: [],
+      active: 0,
     }
   }
   componentDidMount(){
-
+    this.setState({images: carouselData});
   }
 
   leftClick = () => {
-
+    this.state.active - 1 < 0
+      ? this.setState({active: this.state.images.length - 1})
+      : this.setState({active: this.state.active - 1})
   }
 
   rightClick = () => {
-
+    this.state.active + 1 > this.state.images.length - 1
+      ? this.setState({active: 0})
+      : this.setState({active: this.state.active + 1})
   }
 
-  selectedImage = () => {
-    return <CarouselImg src={} style={{display: 'block'}} />
-  }
+  // selectedImage = () => {
+  //   return <CarouselImg src={this.state.images[this.state.active]} style={{display: 'block'}} />
+  // }
   
   render(){
     return (
       <WrapCarousel>
         <CarouselBtn left onClick={this.leftClick}>{"<"}</CarouselBtn>
+        <CarouselImg src={this.state.images[this.state.active]} style={{display: 'block'}} />
         <CarouselBtn right onClick={this.rightClick}>{">"}</CarouselBtn>
       </WrapCarousel>
     )
